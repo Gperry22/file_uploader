@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS file_upload;
+CREATE DATABASE file_upload;
