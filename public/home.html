@@ -14,13 +14,24 @@
 
 <body>
 
-    <form ref='uploadForm' id='uploadForm' action='http://localhost:8080/upload' method='post'
-        encType="multipart/form-data">
-        <input type="file" name="sampleFile" />
-        <input type='submit' value='Upload!' />
-    </form>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h3>Upload a pic for the world to see!</h3>
+            <form ref='uploadForm' id='uploadForm' action='http://localhost:8080/upload' method='post'
+                encType="multipart/form-data">
+                <input type="file" name="sampleFile"  />
+                <input type='submit' value='Upload!' class="btn btn-primary" />
+            </form>
+        </div>
+    </div>
 
-    <div id="picsContainer">
+    <div class="container">
+        <div id="picsContainer"></div>
+    </div>
+
+
+
+
 
     </div>
 
