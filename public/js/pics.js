@@ -24,6 +24,7 @@ function postPics(results) {
         var picLink = pic.pictureLink.slice(7)
         var img = $("<img>");
         img.attr("src", picLink);
+        img.addClass("imgSize");
         $("#picsContainer").prepend(img)
     });
 
