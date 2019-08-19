@@ -8,11 +8,18 @@ var router = express.Router();
 // default options
 router.use(fileUpload());
 
+router.get("/api/pics", function(req, res) {
+  db.Picture.findAll({}).then(result => {
+    res.json(result);
+  }).catch((err) => {
+      console.log(err);
+    });
+ })
+
 router.post('/upload', function(req, res) {
   if (Object.keys(req.files).length == 0) {
     return res.status(400).send('No files were uploaded.');
   }
-
   // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
   let sampleFile = req.files.sampleFile;
 
@@ -29,24 +36,14 @@ router.post('/upload', function(req, res) {
             pictureLink: picName
           }
         db.Picture.create(body).then((result) => {
-           res.send('File uploaded!');
+          // res.send('File uploaded!');
+          res.redirect("/")
           }).catch((err) => {
             console.log(err);
           });
         }
       });
     });
-
-
-
-
-
-
-
-
-
-
-
   });
 
 
